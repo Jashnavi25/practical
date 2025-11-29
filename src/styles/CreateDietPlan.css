@@ -1,0 +1,81 @@
+.diet-page-container {
+  background: #e8f1ff;
+  min-height: 100vh;
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.diet-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0546b8;
+}
+
+.diet-subtitle {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Form Card */
+.diet-card {
+  background: white;
+  width: 550px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.diet-label {
+  text-align: left;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.diet-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccd3e7;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.diet-input:focus {
+  border-color: #0b63ff;
+  box-shadow: 0 0 6px rgba(11, 99, 255, 0.2);
+}
+
+.diet-btn {
+  background: #0b63ff;
+  color: white;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.diet-btn:hover {
+  background: #0546b8;
+}
+
+/* Output card */
+.diet-output-card {
+  background: white;
+  width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.diet-output-card h2 {
+  color: #0546b8;
+}

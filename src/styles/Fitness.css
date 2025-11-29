@@ -1,0 +1,92 @@
+/* MAIN LAYOUT */
+.fitness-container {
+  padding: 40px 60px;
+  background: #e8f1ff;
+  min-height: 100vh;
+}
+
+/* HEADER FLEX */
+.fitness-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.fitness-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  object-fit: contain;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fitness-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.fitness-tagline {
+  color: #333;
+  font-size: 16px;
+  max-width: 700px;
+}
+
+/* GRID */
+.fitness-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+/* CARD */
+.fitness-card {
+  background: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  border-left: 6px solid #004de6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.fitness-card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.fitness-card p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.fitness-card ul {
+  padding-left: 18px;
+}
+
+.fitness-card ul li {
+  margin-bottom: 6px;
+  font-size: 14.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .fitness-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fitness-container {
+    padding: 30px;
+  }
+
+  .fitness-header-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}

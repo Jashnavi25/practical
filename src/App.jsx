@@ -1,228 +1,137 @@
-import React, { useState } from "react";
-import "./App.css";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import MentalHealth from "./pages/MentalHealth";
+import Fitness from "./pages/Fitness";
+import Nutrition from "./pages/Nutrition";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+import CreateDietPlan from "./pages/CreateDietPlan";
+import SampleDietPlans from "./pages/SampleDietPlans";
+
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import "./styles/Global.css";
 
 export default function App() {
-  const [page, setPage] = useState("register");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    email: "",
-    username: "",
-    password: "",
-    confirmPassword: "",
-    gender: "",
-  });
-  const [registeredUser, setRegisteredUser] = useState(null);
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
-  const [message, setMessage] = useState("");
+  const location = useLocation();
 
-  // 🔹 Registration handlers
-  const handleRegisterChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // Hide navbar & footer on login & signup
+  const hideLayout =
+    location.pathname === "/login" || location.pathname === "/signup";
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "/login";
   };
 
-  const handleRegisterSubmit = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      setMessage("❌ Passwords do not match!");
-      return;
-    }
-    setRegisteredUser({
-      username: formData.username,
-      password: formData.password,
-    });
-    setMessage("✅ Registration Successful! Redirecting to login...");
-    setTimeout(() => setPage("login"), 2000);
-  };
-
-  // 🔹 Login handlers
-  const handleLoginChange = (e) => {
-    setLoginData({ ...loginData, [e.target.name]: e.target.value });
-  };
-
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    if (
-      registeredUser &&
-      loginData.username === registeredUser.username &&
-      loginData.password === registeredUser.password
-    ) {
-      setMessage("");
-      setPage("homepage");
-    } else {
-      setMessage("❌ Invalid credentials, try again!");
-    }
-  };
-
-  // 🔹 Homepage (WellnessHub)
-  const HomePage = () => (
-    <div className="App">
-      {/* Navbar */}
-      <nav className="navbar">
-        <h2 className="logo">WellnessHub</h2>
-        <ul className="nav-links">
-          <li>Home</li>
-          <li>Mental Health</li>
-          <li>Fitness</li>
-          <li>Nutrition</li>
-          <li>Profile</li>
-          <li onClick={() => setPage("login")} style={{ color: "red", cursor: "pointer" }}>Logout</li>
-        </ul>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="hero">
-        <h1>Your Health Matters</h1>
-        <button className="explore-btn">Explore Resources</button>
-      </section>
-
-      {/* Cards Section */}
-      <section className="cards">
-        <div className="card">
-          <img
-            src="https://img.icons8.com/ios-filled/100/000000/brain.png"
-            alt="Mental Health"
-          />
-          <h3>Mental Health Support</h3>
-        </div>
-        <div className="card">
-          <img
-            src="https://img.icons8.com/ios-filled/100/000000/dumbbell.png"
-            alt="Fitness"
-          />
-          <h3>Fitness Programs</h3>
-        </div>
-        <div className="card">
-          <img
-            src="https://img.icons8.com/ios-filled/100/000000/apple.png"
-            alt="Nutrition"
-          />
-          <h3>Nutrition Advice</h3>
-        </div>
-      </section>
-    </div>
-  );
-
-  // 🔹 Render based on state
   return (
-    <div className="container">
-      {page === "register" && (
-        <form className="form-box" onSubmit={handleRegisterSubmit}>
-          <h2>Registration Page</h2>
-          <div className="input-group">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              required
-              onChange={handleRegisterChange}
-            />
-            <input
-              type="text"
-              name="middleName"
-              placeholder="Middle Name"
-              onChange={handleRegisterChange}
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              required
-              onChange={handleRegisterChange}
-            />
-          </div>
+    <div className="app-layout">
+      
+      {/* NAVBAR */}
+      {!hideLayout && <Navbar onLogout={handleLogout} />}
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            onChange={handleRegisterChange}
-          />
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            required
-            onChange={handleRegisterChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-            onChange={handleRegisterChange}
-          />
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            required
-            onChange={handleRegisterChange}
+      <div className="page-content">
+        <Routes>
+
+          {/* HOME */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
           />
 
-          <div className="gender">
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Male"
-                onChange={handleRegisterChange}
-              />
-              Male
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Female"
-                onChange={handleRegisterChange}
-              />
-              Female
-            </label>
-          </div>
-
-          <button type="submit" className="btn">Register</button>
-          <p>
-            Already have an account?{" "}
-            <span onClick={() => setPage("login")} className="link">
-              Login here
-            </span>
-          </p>
-          {message && <p className="message">{message}</p>}
-        </form>
-      )}
-
-      {page === "login" && (
-        <form className="form-box" onSubmit={handleLoginSubmit}>
-          <h2>Login Page</h2>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            required
-            onChange={handleLoginChange}
+          {/* MENTAL HEALTH */}
+          <Route
+            path="/mental-health"
+            element={
+              <ProtectedRoute>
+                <MentalHealth />
+              </ProtectedRoute>
+            }
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-            onChange={handleLoginChange}
-          />
-          <button type="submit" className="btn">Login</button>
-          <p>
-            Don’t have an account?{" "}
-            <span onClick={() => setPage("register")} className="link">
-              Register here
-            </span>
-          </p>
-          {message && <p className="message">{message}</p>}
-        </form>
-      )}
 
-      {page === "homepage" && <HomePage />}
+          {/* FITNESS */}
+          <Route
+            path="/fitness"
+            element={
+              <ProtectedRoute>
+                <Fitness />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* NUTRITION */}
+          <Route
+            path="/nutrition"
+            element={
+              <ProtectedRoute>
+                <Nutrition />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* DASHBOARD */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* PROFILE */}
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* SAMPLE PLANS */}
+          <Route
+            path="/sample-plans"
+            element={
+              <ProtectedRoute>
+                <SampleDietPlans />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+  path="/create-diet-plan"
+  element={
+    <ProtectedRoute>
+      <CreateDietPlan />
+    </ProtectedRoute>
+  }
+/>
+
+
+          {/* PUBLIC ROUTES */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {/* CATCH ALL */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+
+      {/* FOOTER */}
+      {!hideLayout && <Footer />}
     </div>
   );
 }

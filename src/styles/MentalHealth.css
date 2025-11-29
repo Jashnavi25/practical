@@ -1,0 +1,85 @@
+/* MAIN PAGE */
+.mh-container {
+  background: #e8f1fc;
+  min-height: 100vh;
+  padding: 50px 8%;
+}
+
+/* HEADER FLEX → IMAGE LEFT + TEXT RIGHT */
+.mh-header-flex {
+  display: flex;
+  align-items: center;        /* same vertical height */
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* IMAGE CARD STYLE */
+.mh-icon-side {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+
+  background: #ffffff;
+  padding: 18px;
+
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HEADER TEXT */
+.mh-header-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.mh-tagline {
+  font-size: 18px;
+  color: #475569;
+  margin-top: 10px;
+  white-space: nowrap;   /* NEW: forces one single line */
+}
+
+
+/* CARD GRID — CLEAN, EVENLY SPACED */
+.mh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 40px auto;
+}
+
+/* CARD STYLING */
+.mh-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  border-left: 6px solid #1e40af;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mh-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+}
+
+.mh-card h2 {
+  color: #1e3a8a;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.mh-card p {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #444;
+}

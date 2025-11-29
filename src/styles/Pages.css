@@ -1,0 +1,43 @@
+/* PAGE BACKGROUND */
+.page-container {
+  background: #e8f1fc;
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+/* MAIN TITLE */
+.page-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 40px;
+}
+
+/* 2-COLUMN LAYOUT */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  margin-bottom: 60px;
+}
+
+/* EACH BOX */
+.content-block h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.content-block p {
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE (For mobile screens) */
+@media screen and (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}

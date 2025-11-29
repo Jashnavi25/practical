@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;   /* ❗ prevents ALL scrolling */
+}
+/* MAIN LAYOUT */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
+}
+
+.page-content {
+  padding-top: 80px;   /* space under navbar */
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+
+/* Remove default margin from body */
+body {
+  margin: 0;
+  padding: 0;
+  background: #e8f0fc;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+

@@ -1,0 +1,61 @@
+/* Profile Container */
+.profile-container {
+  padding: 40px 60px;
+  padding-bottom: 110px;        /* prevents footer overlap */
+  min-height: 100vh;
+  background: #e8f1ff;
+  max-width: 1200px;            /* centered layout */
+  margin: auto;
+}
+
+/* Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #004de6;
+}
+
+.profile-sub {
+  color: #555;
+}
+
+/* Cards Grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* change to 3 if needed */
+  gap: 26px;
+}
+
+/* Each Card */
+.profile-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border-left: 6px solid #004de6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.profile-card button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #004de6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
