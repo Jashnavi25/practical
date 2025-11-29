@@ -1,6 +1,6 @@
 /* MAIN LAYOUT */
 .fitness-container {
-  padding: 40px 60px;
+  padding: 0% 60px;
   background: #e8f1ff;
   min-height: 100vh;
 }
@@ -14,14 +14,15 @@
 }
 
 .fitness-icon {
-  width: 120px;
-  height: 120px;
+  width: 85px;       /* reduced size */
+  height: 85px;
   border-radius: 16px;
   object-fit: contain;
   background: white;
-  padding: 12px;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .fitness-text h1 {
   font-size: 36px;
@@ -89,4 +90,29 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* CENTER BUTTON BELOW CARDS */
+.fitness-center-btn {
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* BUTTON STYLE SAME AS EXPLORE RESOURCES */
+.fitness-btn {
+  background: #0d47a1;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.fitness-btn:hover {
+  background: #083981;
+  transform: translateY(-3px);
 }

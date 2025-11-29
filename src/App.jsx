@@ -12,6 +12,9 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import CreateDietPlan from "./pages/CreateDietPlan";
 import SampleDietPlans from "./pages/SampleDietPlans";
+import StressCalculator from "./pages/StressCalculator";
+import FitnessTracker from "./pages/FitnessTracker";
+
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -119,6 +122,8 @@ export default function App() {
     </ProtectedRoute>
   }
 />
+          <Route path="/stress-calculator" element={<StressCalculator />} />
+          <Route path="/fitness-tracker" element={<FitnessTracker />} />
 
 
           {/* PUBLIC ROUTES */}

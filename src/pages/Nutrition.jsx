@@ -24,44 +24,68 @@ export default function Nutrition() {
       {/* 3 CARD ROW */}
       <div className="nutrition-card-row">
 
-        <div className="nutrition-card">
-          <h2>Balanced Meal Plans 🥗</h2>
-          <p>
-            Simple templates for breakfast, lunch, and dinner designed 
-            to boost focus, energy, and long-term health.
-          </p>
-          <ul>
-            <li>Easy 20-minute meals</li>
-            <li>Protein, greens, whole grains balance</li>
-            <li>Veg / Non-veg / Vegan options</li>
-          </ul>
-        </div>
+        {/* BALANCED MEAL PLANS */}
+        <a
+          href="https://nutritionsource.hsph.harvard.edu/healthy-eating-plate/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div className="nutrition-card">
+            <h2>Balanced Meal Plans 🥗</h2>
+            <p>
+              Simple templates for breakfast, lunch, and dinner designed 
+              to boost focus, energy, and long-term health.
+            </p>
+            <ul>
+              <li>Easy 20-minute meals</li>
+              <li>Protein, greens, whole grains balance</li>
+              <li>Veg / Non-veg / Vegan options</li>
+            </ul>
+          </div>
+        </a>
 
-        <div className="nutrition-card">
-          <h2>Smart Snacks & Hydration 💧</h2>
-          <p>
-            Healthy snack ideas and hydration guidance to help you stay active 
-            and alert throughout the day.
-          </p>
-          <ul>
-            <li>Brain-boosting snacks</li>
-            <li>Daily hydration targets</li>
-            <li>Electrolyte & fruit options</li>
-          </ul>
-        </div>
+        {/* SMART SNACKS & HYDRATION */}
+        <a
+          href="https://www.nutritionsolutions.ca/wp-content/uploads/5-Smart-Snacks-rev.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div className="nutrition-card">
+            <h2>Smart Snacks & Hydration 💧</h2>
+            <p>
+              Healthy snack ideas and hydration guidance to help you stay active 
+              and alert throughout the day.
+            </p>
+            <ul>
+              <li>Brain-boosting snacks</li>
+              <li>Daily hydration targets</li>
+              <li>Electrolyte & fruit options</li>
+            </ul>
+          </div>
+        </a>
 
-        <div className="nutrition-card">
-          <h2>Budget-Friendly Recipes 🍽️</h2>
-          <p>
-            Affordable, quick recipes for students — tasty, nutritious, 
-            and practical for everyday cooking.
-          </p>
-          <ul>
-            <li>₹100–₹150 recipes</li>
-            <li>5-ingredient meals</li>
-            <li>Weekly grocery checklist</li>
-          </ul>
-        </div>
+        {/* BUDGET-FRIENDLY RECIPES */}
+        <a
+          href="https://www.budgetbytes.com/category/recipes/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div className="nutrition-card">
+            <h2>Budget-Friendly Recipes 🍽️</h2>
+            <p>
+              Affordable, quick recipes for students — tasty, nutritious, 
+              and practical for everyday cooking.
+            </p>
+            <ul>
+              <li>₹100–₹150 recipes</li>
+              <li>5-ingredient meals</li>
+              <li>Weekly grocery checklist</li>
+            </ul>
+          </div>
+        </a>
 
       </div>
 

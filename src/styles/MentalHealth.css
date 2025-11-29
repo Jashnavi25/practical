@@ -83,3 +83,28 @@
   line-height: 1.55;
   color: #444;
 }
+
+/* CENTER BUTTON BELOW CARDS */
+.mh-center-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* BUTTON STYLE */
+.mh-btn {
+  background: #1e40af;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.mh-btn:hover {
+  background: #15348a;
+  transform: translateY(-3px);
+}

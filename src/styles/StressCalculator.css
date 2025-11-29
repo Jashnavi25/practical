@@ -1,0 +1,77 @@
+:root {
+  --background: #E8F0FF;     
+  --card-bg: #FFFFFF;        
+  --primary: #0B4ED2;        
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  font-family: "Poppins", sans-serif;
+}
+
+.app-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.stress-card {
+  width: 70%;
+  margin: 20px auto;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 6px solid var(--primary);
+}
+
+.stress-card h1 {
+  color: var(--primary);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.question-block {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.question-block label {
+  font-size: 18px;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.calculate-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.calculate-btn:hover {
+  background: #083fb0;
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f7faff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 20px;
+}

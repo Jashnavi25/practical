@@ -21,7 +21,7 @@ export default function Login() {
     }
 
     if (savedUser.email === email && savedUser.password === password) {
-      login(savedUser);   // includes role
+      login(savedUser);
       localStorage.setItem("authUser", JSON.stringify(savedUser));
       navigate("/");
     } else {
@@ -30,30 +30,42 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-container">
-      <form className="auth-box" onSubmit={handleLogin}>
-        <h2>Login</h2>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2 className="auth-title">Welcome Back</h2>
+        <p className="auth-subtitle">Login to continue</p>
 
-        <input 
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <form onSubmit={handleLogin} className="auth-form">
 
-        <input 
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <div className="input-group">
+            <label>Email</label>
+            <input 
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit">Login</button>
+          <div className="input-group">
+            <label>Password</label>
+            <input 
+              type="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-      </form>
+          <button className="auth-btn" type="submit">Login</button>
+
+          <p className="auth-switch">
+            Don't have an account? <Link to="/signup">Create one</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

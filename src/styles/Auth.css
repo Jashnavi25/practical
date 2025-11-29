@@ -1,55 +1,125 @@
-.auth-container {
-  background: #e8f1fc;
-  height: 100vh;
+/* BACKGROUND */
+.auth-page {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #e8f1ff;
+  padding: 20px;
 }
 
-.auth-box {
+/* CARD – compact & professional */
+.auth-card {
+  width: 500px;
   background: white;
-  padding: 35px;
-  border-radius: 12px;
-  width: 320px;
+  padding: 18px 22px;             /* reduced padding */
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-left: 5px solid #0b4ed2;
+  animation: fadeIn 0.4s ease;
+}
+
+/* TITLES */
+.auth-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b4ed2;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 4px;             /* compact */
 }
 
-.auth-box h2 {
-  margin-bottom: 20px;
-  color: #1e3a8a;
+.auth-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 8px;             /* reduced */
 }
 
-.auth-box input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
-  font-size: 15px;
+/* FORM LAYOUT – compact spacing */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                        /* smaller gaps */
 }
 
-.auth-box button {
-  width: 100%;
-  padding: 12px;
-  background: #1e40af;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.auth-box button:hover {
-  background: #1e3a8a;
-}
-
-.auth-box p {
-  margin-top: 12px;
+/* INPUT FIELDS */
+.input-group label {
   font-size: 14px;
+  color: #333;
 }
 
-.auth-box a {
-  color: #1e40af;
-  text-decoration: none;
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 8px 10px;              /* shorter input */
+  height: 38px;                   /* fixed compact height */
+  border: 1.5px solid #d4dcef;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #f7faff;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #0b4ed2;
+}
+
+/* TWO COLUMN (Gender + Age) */
+.two-col {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;                       /* compact */
+}
+
+.gender-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;                /* reduced spacing */
+}
+
+.gender-box label {
+  font-size: 13px;
+  color: #333;
+}
+
+/* BUTTON */
+.auth-btn {
+  width: 100%;
+  padding: 10px;                  /* shorter button */
+  background: #0b4ed2;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: 0.2s ease;
+}
+
+.auth-btn:hover {
+  background: #093aa4;
+  transform: translateY(-2px);
+}
+
+/* SWITCH TEXT */
+.auth-switch {
+  text-align: center;
+  margin-top: 8px;
+  color: #444;
+}
+
+.auth-switch a {
+  color: #0b4ed2;
+  font-weight: 600;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gender-section {
+  margin-top: 6px;     /* small gap from card edge */
+  margin-bottom: 2px;  /* optional — compact look */
 }
